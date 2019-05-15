@@ -35,9 +35,9 @@ I made the target variable by creating a column for fourth down conversion. 1 if
 
 It appears that teams increase there odds of winning when they attempt to go for it on fourth down compared to punting. However, some more digging needs to be done for this. EPA and WPA can be misleading. Most teams go for it in on fourth down when they are losing in the fourth quarter. Your win probability added for example is not going to drop that much that late in the game if you fail to convert when compared to punting the ball in the second quarter. 
 
-### Model
+### Models
 
-I ran multiple classification models with accuracy scores ranging from 61% to 65%. The features I used were yards needed for a first down, whether or not the play was a run play, touchdown proability and goal to go.
+I ran multiple classification models with accuracy scores ranging from 61% to 65%. The features I used were yards needed for a first down, whether or not the play was a run play, touchdown proability and goal to go. Features like playing on your home field and total scoring proability did not appear to have any significant correlation with converting on fourth down. 
 
 #### Data Dictionary
 
@@ -51,18 +51,21 @@ I ran multiple classification models with accuracy scores ranging from 61% to 65
 
 Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/master/legacy_data
 
-#### Accuracy Scores
+#### Accuracy and Precision Scores
 
-| Model | Accuracy Score |
-| --- | --- |
-| Logistic Regression | .6566 |
-| Boosting | .6558 | 
-| Extra Trees | .6541 |
-| Random Forests | .6516 |
-| KNN | .6307 |
-| Bagging | .6147 |
-| Dummy (Most Frequent) | .5343 |
-| Dummy (Stratified) | .5293 |
+| Model | Accuracy | Precision |
+| --- | --- | --- |
+| Logistic Regression | .6566 | .6131 |
+| Boosting | .6558 | .6316 |
+| Extra Trees | .6549 | .6429 |
+| Random Forests | .6399 | .6047 |
+| KNN | .6307 | .6083 |
+| Bagging | .6281 | .6065 |
+| Dummy (Most Frequent) | .5343 | N/A |
+| Dummy (Stratified) | .5293 | .495 |
+
+It describes how good a model is at predicting the positive class. Precision is referred to as the positive predictive value.
+
 
 
 ## Conclusion
