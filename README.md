@@ -14,13 +14,13 @@ The goal of the project is to try and predict whether a team should go for it on
 
 ### Dropping Features
 
-Since the NFL dataset was large, importing the data was slow and the data was difficult to read. The first step was to drop unnecessary features. I checked the features and dropped all features that contained more than 100,000 nulls. Afterwards I dropped features that would reveal the result of the play. The dataset had multiple features that included win probability added (wpa) and expected points added (epa). These features would reveal to the model if the team converted on fourth down or not so I dropped these features. I also dropped features that would have nothing do with fourth down (kick return, extra-point, two-point-attempt, etc.)
+Since the NFL dataset was large, importing the data was slow and the data was difficult to read. The first step was to drop unnecessary features. I checked the features and dropped all features that contained more than 100,000 nulls. Afterwards I dropped features that would reveal the result of the play. The dataset had multiple features that included win probability added (wpa) and expected points added (epa). These features would reveal to the model if the team converted on fourth down or not so I dropped these features. I also dropped features that would have nothing do with fourth down (kick return, extra-point, two-point-attempt, etc). After dropping these features, I was able to cut down the dataset to 99 features. I was now able to start exploring the dataset and dive into finding which features are relavent when attempting to go for it on fourth down. 
 
 ### EDA
 
-After dropping these features, I was able to cut down the dataset to 99 features. I was now able to start exploring the dataset and start to explore the data.
+I made the target variable by creating a column for fourth down conversion. 1 if a team converts on fourth down and 0 if the team does not convert on fourth down. With this information, a team successfully converted on fourth down approximately 49% of the time. The next step was splitting the play type into dummy columns to see if the team ran or passed the ball, as well as the formation before the snap. I also decided to make a dummy variable for whether a team was home or not. Playing at home may or may not make it easier to convert on fourth down. I also combined field goal probability and touchdown probability into one total scoring probability to see if that would have any impact on converting on fourth down. However, before digging into creating a model, I wanted to explore expected points added (EPA) and win probability added (wpa) to see the impact of punting or going for it on fourth down.
 
-### 
+####  EPA and WPA
 
 | 4th Down Attempt | Win Probability Added | Expected Points Added |
 | --- | --- | --- |
@@ -29,25 +29,25 @@ After dropping these features, I was able to cut down the dataset to 99 features
 
 
 | Punt or 4th Down Attempt | Win Probability Added | Expected Points Added |
+| --- | --- | --- |
 | 4th Down Attempt | .0142 | .0830 |
 | Punt | -.0815 | -3.5717 |
 
+### Model
 
-### Data Dictionary
+#### Data Dictionary
 
 | Feature | Type | Description |
 | --- | --- | --- |
 | 4th_down_conversion | Integer | 1 if the offense converts on fourth down. 0 if the offense fails to convert on fourth down |
 | ydstogo | Integer | Yards needed for a first down |
-| run | Integer | 1 if the offense runs the ball.  0 if the offense throws the ball |
+| run | Integer | 1 if the offense runs the ball. 0 if the offense throws the ball |
 | td_prob | Float | Probability of the offense scoring a touchdown (before the fourth down attempt) |
 | goal_to_go | Int | 1 if the offense is in the opponents goal line. 0 if the offense is not in the oppents goal line. |
 
 Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/master/legacy_data
 
-### Models
-
-Optimizing for accuracy:
+#### Accuracy Scores
 
 | Model | Accuracy Score |
 | --- | --- |
