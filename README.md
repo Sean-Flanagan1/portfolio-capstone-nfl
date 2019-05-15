@@ -4,7 +4,7 @@
 
 Should teams punt or go for it on fourth down?
 
-I wanted to see if teams should punt or go for it on fourth down. One that bothers me when watching sports is when the announcer says that the coach made a smart decision not getting caught up in the moment when they punt the ball when it is a fourth and one. I wanted to do my own research to find out if the announcer is right. 
+I wanted to see if teams should punt or go for it on fourth down. One thing that bothers me when watching football is when the announcer says that the coach made a smart decision not getting caught up in the moment when they punt the ball when it is a fourth and one. I wanted to do my own research to find out if the announcer is right. 
 
 ## Executive Summary
 
@@ -33,7 +33,11 @@ I made the target variable by creating a column for fourth down conversion. 1 if
 | 4th Down Attempt | .0142 | .0830 |
 | Punt | -.0815 | -3.5717 |
 
+It appears that teams increase there odds of winning when they attempt to go for it on fourth down compared to punting. However, some more digging needs to be done for this. EPA and WPA can be misleading. Most teams go for it in on fourth down when they are losing in the fourth quarter. Your win probability added for example is not going to drop that much that late in the game if you fail to convert when compared to punting the ball in the second quarter. 
+
 ### Model
+
+I ran multiple classification models with accuracy scores ranging from 61% to 65%. The features I used were yards needed for a first down, whether or not the play was a run play, touchdown proability and goal to go.
 
 #### Data Dictionary
 
