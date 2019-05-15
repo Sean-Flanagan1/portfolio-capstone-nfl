@@ -45,11 +45,3 @@ Optimizing for accuracy:
 ## Data Sources
 Kaggle Detailed NFL Play-by-Play Data 2009-2018: https://www.kaggle.com/maxhorowitz/nflplaybyplay2009to2016
 NFL Play-by-Play Data 2009-2018 Data Dictionary: https://github.com/ryurko/nflscrapR-data/tree/master/legacy_data
-# capstone-nfl
-# capstone-nfl
-# capstone-nfl
-# capstone-nfl
-# capstone-nfl-data
-# capstone-nfl-data
-# capstone-nfl-4th-down
-# portfolio-capstone-nfl
