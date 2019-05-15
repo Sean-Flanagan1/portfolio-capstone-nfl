@@ -12,6 +12,27 @@ The goal of the project is to try and predict whether a team should go for it on
 
 ## Process
 
+### Dropping Features
+
+Since the NFL dataset was large, importing the data was slow and the data was difficult to read. The first step was to drop unnecessary features. I checked the features and dropped all features that contained more than 100,000 nulls. Afterwards I dropped features that would reveal the result of the play. The dataset had multiple features that included win probability added (wpa) and expected points added (epa). These features would reveal to the model if the team converted on fourth down or not so I dropped these features. I also dropped features that would have nothing do with fourth down (kick return, extra-point, two-point-attempt, etc.)
+
+### EDA
+
+After dropping these features, I was able to cut down the dataset to 99 features. I was now able to start exploring the dataset and start to explore the data.
+
+### 
+
+| 4th Down Attempt | Win Probability Added | Expected Points Added |
+| --- | --- | --- |
+| Failed Conversion | -.0409 | -2.4424 |
+| Successful Conversion | .0712 | 2.6971 |
+
+
+| Punt or 4th Down Attempt | Win Probability Added | Expected Points Added |
+| 4th Down Attempt | .0142 | .0830 |
+| Punt | -.0815 | -3.5717 |
+
+
 ### Data Dictionary
 
 | Feature | Type | Description |
