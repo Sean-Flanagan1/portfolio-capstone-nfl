@@ -54,7 +54,7 @@ Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/mast
 
 #### Model Results
 
-The classification models had accuracy scores ranging from 61% to 65% and precision scores ranging from 60% to 64%. This was approximately 10% better when compared to the dummy metrics. Logistic regression had the best accuracy score at 65.66% while boosting extra trees also had accuracy scores in the 65% range. Extra trees also had the best precision score at 64.29%. Extra trees did well with both metrics. I grid searched for best parameters for all models. Extra trees had a n_estimator of 44, max_depth of six and min_sample_split of 17.
+The classification models had accuracy scores ranging from 62% to 65% and precision scores ranging from 60% to 64%. This was approximately 10% better when compared to the dummy metrics. Logistic regression had the best accuracy score at 65.66% while boosting extra trees also had accuracy scores in the 65% range. Extra trees also had the best precision score at 64.29%. Extra trees did well with both metrics. I grid searched for best parameters for all models. Extra trees had a n_estimator of 44, max_depth of six and min_sample_split of 17.
 
 #### Accuracy and Precision Scores
 
@@ -66,9 +66,10 @@ The classification models had accuracy scores ranging from 61% to 65% and precis
 | Random Forests | .6399 | .6047 |
 | KNN | .6307 | .6083 |
 | Bagging | .6281 | .6065 |
-| Dummy (Most Frequent) | .5343 | N/A |
+| Dummy (Most Frequent) | .5343 | N/A* |
 | Dummy (Stratified) | .5293 | .495 |
 
+* The dummy (most frequent) model is N/A for precision is because you cannot divide 0/0. This dummy model only predicted false positives and false negatives. Precision is the positive predictive value (TP/(TP+TN)).
 
 ## Conclusion
 To conclude the data show that teams should go for it on fourth down given the right circumstances. While teams successfully convert on fourth down approximately 49% of the time, more research will be done to see the effect of taking out the fourth quarter (or the last few minutes of the fourth quarter) and the last 30 seconds of the second quarter. A lot of times regardless of the yardage needed for a first down, a team will go for it on fourth down because they are down by more than 3 points with a minute left. What I am more interested about is a fourth and two at the fifty-yard line when punting and going for it are both feasible options. 
