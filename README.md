@@ -46,7 +46,7 @@ I ran multiple classifications to try and find the model with the best accuracy 
 | 4th_down_conversion | Integer | 1 if the offense converts on fourth down. 0 if the offense fails to convert on fourth down | 
 | ydstogo | Integer | Yards needed for a first down |
 | run | Integer | 1 if the offense runs the ball. 0 if the offense throws the ball |
-| td_prob | Float | Probability of the offense scoring a touchdown (before the fourth down attempt) |
+| td_prob | Float | Probability of the possession team scoring the next touchdown |
 | goal_to_go | Int | 1 if the offense is in the opponent’s goal line. 0 if the offense is not in the opponent’s goal line. |
 
 Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/master/legacy_data
