@@ -1,4 +1,4 @@
-# Capstone Project: Punt or Go For it on Fourth Down?
+# Capstone Project: To Punt or Go for it on Fourth Down?
 
 ## Problem Statement
 
