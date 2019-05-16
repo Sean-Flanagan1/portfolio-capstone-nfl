@@ -69,7 +69,7 @@ The classification models had accuracy scores ranging from 62% to 65% and precis
 | Dummy (Most Frequent) | .5343 | N/A* |
 | Dummy (Stratified) | .5293 | .495 |
 
-* The dummy (most frequent) model is N/A for precision is because you cannot divide 0/0. This dummy model only predicted false positives and false negatives. Precision is the positive predictive value (TP/(TP+TN)).
+\* The dummy (most frequent) model is N/A for precision because you cannot divide 0/0. This dummy model only predicted false positives and false negatives. Precision is the positive predictive value (TP/(TP+TN)).
 
 ## Conclusion
 To conclude the data show that teams should go for it on fourth down given the right circumstances. While teams successfully convert on fourth down approximately 49% of the time, more research will be done to see the effect of taking out the fourth quarter (or the last few minutes of the fourth quarter) and the last 30 seconds of the second quarter. A lot of times regardless of the yardage needed for a first down, a team will go for it on fourth down because they are down by more than 3 points with a minute left. What I am more interested about is a fourth and two at the fifty-yard line when punting and going for it are both feasible options. 
