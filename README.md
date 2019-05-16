@@ -4,11 +4,11 @@
 
 Should teams punt or go for it on fourth down?
 
-I wanted to see if teams should punt or go for it on fourth down. One thing that bothers me when watching football is when the announcer says that the coach made a smart decision not getting caught up in the moment when they punt the ball when it is a fourth and one. I wanted to do my own research to find out if the announcer is right. 
+I wanted to see if teams should punt or go for it on fourth down. One thing that bothers me when watching football is when the announcer says that the coach made a smart decision not getting caught up in the moment by punting on fourth and one. I wanted to do my own research to find out if the announcer is right. 
 
 ## Executive Summary
 
-The goal of the project is to try and predict whether a team should go for it on fourth down or punt. I pulled a NFL Play-by-Play Data set from Kaggle. The dataset was for seasons 2009 through 2018. The dataset contained 449,371 rows and 255 features. I ran multiple classification models trying to find which model could predict most accurately which team should go for it on fourth down or not. The focus should be on accuracy because the coach would want to correctly predict the result of the play whether if it ia a converted fourth down or not. 
+The goal of the project is to try and predict whether a team should go for it on fourth down or punt. I pulled a NFL Play-by-Play Data set from Kaggle. The dataset was for seasons 2009 through 2018. The dataset contained 449,371 rows and 255 features. I ran multiple classification models trying to find which model could predict most accurately which team should go for it on fourth down or not. The focus should be on accuracy because the bettor/fan would want to correctly predict the result of the play whether if it is a converted fourth down or not. Another focus on the model is precision since the coach would want to make the correct play call as a coach, maximizing the positive predictive value.
 
 ## Process
 
@@ -37,7 +37,7 @@ It appears that teams increase there odds of winning when they attempt to go for
 
 ### Models
 
-I ran multiple classification models with accuracy scores ranging from 61% to 65%. The features I used were yards needed for a first down, whether or not the play was a run play, touchdown proability and goal to go. Features like playing on your home field and total scoring proability did not appear to have any significant correlation with converting on fourth down. 
+I ran multiple classifications to try and find the model with the best accuracy and precision scores. The features I used were yards needed for a first down, whether or not the play was a run play, touchdown proability and goal to go. Features like playing on your home field and total scoring proability did not appear to have any significant correlation with converting on fourth down. 
 
 #### Data Dictionary
 
@@ -50,6 +50,11 @@ I ran multiple classification models with accuracy scores ranging from 61% to 65
 | goal_to_go | Int | 1 if the offense is in the opponents goal line. 0 if the offense is not in the oppents goal line. |
 
 Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/master/legacy_data
+
+
+#### Model Results
+
+The classification models had accuracy scores ranging from 61% to 65% and precision scores ranging from 60% to 64%. This was approximately 10% better when compared to the dummy metrics. Logisitc regression had the best accuracy score at 65.66% while boosting extra trees also had accuracy scores in the 65% range. Extra trees also had the best precision score at 64.29%. Extra trees did well with both metrics. I gridsearched for best parameters for all models. Extra trees had a n_estimator of 44, max_depth of six and min_sample_split of 17.
 
 #### Accuracy and Precision Scores
 
@@ -64,11 +69,10 @@ Full list of data dictionary: https://github.com/ryurko/nflscrapR-data/tree/mast
 | Dummy (Most Frequent) | .5343 | N/A |
 | Dummy (Stratified) | .5293 | .495 |
 
-It describes how good a model is at predicting the positive class. Precision is referred to as the positive predictive value.
-
-
 
 ## Conclusion
+
+
 
 ## Data Sources
 Kaggle Detailed NFL Play-by-Play Data 2009-2018: https://www.kaggle.com/maxhorowitz/nflplaybyplay2009to2016
